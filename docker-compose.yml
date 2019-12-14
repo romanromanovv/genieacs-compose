@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  genieacsserver:
+    image: romanromanovv/genieacsdocker:latest
+    ports:
+      - "3000:3000"
+      - "7547:7547"
+      - "7557:7557"
+      - "7567:7567"
+    links:
+      - mongodb
+    volumes:
+      - /opt/TR069/genieacs_server/:/opt/
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongo-cont
+    volumes:
+      - /opt/mongo-volume/:/data/db
