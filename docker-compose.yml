@@ -2,7 +2,7 @@ version: '2'
 
 services:
   genieacsserver:
-    image: romanromanovv/genieacsdocker:latest
+    image: romanromanovv/genieacsdocker:commit10
     ports:
       - "3000:3000"
       - "7547:7547"
@@ -10,8 +10,6 @@ services:
       - "7567:7567"
     links:
       - mongodb
-    volumes:
-      - /opt/TR069/genieacs_server/:/opt/
     depends_on:
       - mongodb
   mongodb:

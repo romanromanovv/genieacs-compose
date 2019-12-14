@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-var path = require('path');
-var fs = require('fs');
-
-var dir = path.resolve(path.dirname(fs.realpathSync(__filename)), '..');
-process.chdir(dir);
-
-var cluster = require(path.resolve(dir, 'lib/cluster'));
-cluster.start('nbi');
