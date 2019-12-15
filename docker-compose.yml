@@ -2,7 +2,8 @@ version: '2'
 
 services:
   genieacsserver:
-    image: romanromanovv/genieacsdocker:commit10
+    image: romanromanovv/genieacsdocker:prod1
+    container_name: genieacs-cont
     ports:
       - "3000:3000"
       - "7547:7547"

@@ -56,9 +56,9 @@ RUN sed -i 's/127.0.0.1/mongodb/g' /opt/node_modules/genieacs/config/config.json
 
 WORKDIR /opt/
 
-COPY startscript.sh startscript.sh
 RUN git clone https://github.com/romanromanovv/genieacs
 RUN cp genieacs/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
+RUN cp genieacs/startscript.sh /opt/startscript.sh
+RUN chmod +x /opt/startscript.sh
 
 CMD ["/usr/bin/supervisord","-c","/etc/supervisor/conf.d/supervisord.conf"]
